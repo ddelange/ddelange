@@ -1,0 +1,28 @@
+name: README
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "4 2 * * *"
+
+jobs:
+  README:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v4
+      - name: Setup Playwright
+        run: |
+          pip install pandas playwright tabulate
+          python -m playwright install --with-deps webkit
+      - name: Write README.md
+        run: |
+          echo -e "###  First impressions matter. Here are some [git aliases :octocat:](https://github.com/ddelange/new-mac-setup#aliases)\n\n#### Starred Things\n" > README.md
+          curl -sSL https://gist.github.com/ddelange/f233237f91f23a158cea74f0f2f961c6/raw/3b9083f9283b5eadd3ea68e127ecc1613677eef8/playwright_github_stars_lists.py | python - >> README.md
+      - name: Amend README.md
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          test "$(git diff)" && git commit --amend --no-edit --no-verify -a && git push -f
