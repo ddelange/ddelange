@@ -4,14 +4,14 @@
 
 | name                                                   | description                                                     |   stars |
 |--------------------------------------------------------|-----------------------------------------------------------------|---------|
-| [ml](https://github.com/stars/ddelange/lists/ml)       | NLP, Knowledge Extraction, Computer Vision, ...                 |     883 |
-| [dev](https://github.com/stars/ddelange/lists/dev)     | Developer Experience, Life Hacks, CLI Productivity, ...         |     628 |
-| [db](https://github.com/stars/ddelange/lists/db)       | Databases, Connectors, Converters, ...                          |     296 |
-| [etl](https://github.com/stars/ddelange/lists/etl)     | Extract-Transform-Load, Data Wrangling, Data Mining, ...        |     271 |
-| [ops](https://github.com/stars/ddelange/lists/ops)     | Kubernetes, Autoscaling, Automation, ...                        |     242 |
+| [ml](https://github.com/stars/ddelange/lists/ml)       | NLP, Knowledge Extraction, Computer Vision, ...                 |     889 |
+| [dev](https://github.com/stars/ddelange/lists/dev)     | Developer Experience, Life Hacks, CLI Productivity, ...         |     638 |
+| [db](https://github.com/stars/ddelange/lists/db)       | Databases, Connectors, Converters, ...                          |     297 |
+| [etl](https://github.com/stars/ddelange/lists/etl)     | Extract-Transform-Load, Data Wrangling, Data Mining, ...        |     270 |
+| [ops](https://github.com/stars/ddelange/lists/ops)     | Kubernetes, Autoscaling, Automation, ...                        |     241 |
 | [fe](https://github.com/stars/ddelange/lists/fe)       | Front-End, Full-Stack, App Development, ...                     |     179 |
 | [graph](https://github.com/stars/ddelange/lists/graph) | Knowledge Graphs, Graph Learning, GraphQL, ...                  |     164 |
-| [mlops](https://github.com/stars/ddelange/lists/mlops) | Plan, Code, Build, Test, Release, Deploy, Operate, Monitor, ... |     155 |
+| [mlops](https://github.com/stars/ddelange/lists/mlops) | Plan, Code, Build, Test, Release, Deploy, Operate, Monitor, ... |     157 |
 | [km](https://github.com/stars/ddelange/lists/km)       | Knowledge Management, Digital Garden, Second Brain, ...         |      89 |
 | [net](https://github.com/stars/ddelange/lists/net)     | TCP/IP, everything on top of it...                              |      65 |
 | [eda](https://github.com/stars/ddelange/lists/eda)     | Exploratory Data Analysis, Data Visualisation, ...              |      41 |
