@@ -9,20 +9,26 @@ jobs:
   README:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          # PEP 723 inline deps live in the script, so key the uv cache off it
+          cache-dependency-glob: .github/playwright_github_stars_lists.py
       - name: Setup Playwright
-        run: |
-          pip install pandas playwright tabulate
-          python -m playwright install --with-deps webkit
+        run: uv run --with playwright playwright install --with-deps webkit
       - name: Write README.md
         run: |
           echo -e "###  First impressions matter. Here are some [git aliases :octocat:](https://github.com/ddelange/new-mac-setup#aliases)\n\n#### Starred Things\n" > README.md
-          curl -sSL https://gist.githubusercontent.com/ddelange/f233237f91f23a158cea74f0f2f961c6/raw/7b3eea63469aa33aaab112ecc0d0a8d6685c2405/playwright_github_stars_lists.py | python - >> README.md
+          uv run .github/playwright_github_stars_lists.py --format markdown >> README.md
       - name: Amend README.md
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          test "$(git diff)" && git commit --amend --no-edit --no-verify -a && git push -f
+          # only amend + force-push when the star counts actually changed;
+          # a no-op run must exit 0 (bare `test "$(git diff)"` returns 1 on no diff)
+          if ! git diff --quiet; then
+            git commit --amend --no-edit --no-verify -a
+            git push --force
+          fi
