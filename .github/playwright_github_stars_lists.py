@@ -5,7 +5,7 @@
 #   "pandas~=3.0",
 #   "playwright~=1.61",
 #   "tabulate~=0.10",
-#   "toon_format @ https://github.com/toon-format/toon-python/archive/refs/heads/main.zip",
+#   "toon-format~=1.2",
 # ]
 # ///
 """Scrape my GitHub Stars lists and print them, sorted by repo count.
